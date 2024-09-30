@@ -5,7 +5,9 @@
   font-weight: normal;
   line-height: 1.5;
 }
-
+video {
+  width: 970px;
+}
 #sec0,
 #sec2,
 #sec4 {
