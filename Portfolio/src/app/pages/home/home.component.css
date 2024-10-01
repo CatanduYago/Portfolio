@@ -378,7 +378,9 @@ video {
     align-items: center;
     margin-left: 40px;
   }
-
+  video {
+    width: 100%;
+  }
   #sec0 p {
     width: 300px;
   }
