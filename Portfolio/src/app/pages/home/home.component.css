@@ -5,8 +5,8 @@
   font-weight: normal;
   line-height: 1.5;
 }
-video {
-  width: 970px;
+.foto-proyecto {
+  width: 100%;
 }
 #sec0,
 #sec2,
@@ -378,7 +378,7 @@ video {
     align-items: center;
     margin-left: 40px;
   }
-  video {
+  .foto-proyecto {
     width: 100%;
   }
   #sec0 p {
