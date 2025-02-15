@@ -1,0 +1,27 @@
+<div id="sec1" class="section about-section">
+    <div class="about-container">
+      <img [src]="aboutImage" loading="lazy" alt="Sobre mí" class="about-image" />
+      <div class="about-text">
+        <h1 class="title-about" data-lang="es">{{ titleEs }}</h1>
+        <h1 class="title-about" data-lang="en" style="display: none">{{ titleEn }}</h1>
+        
+        <p data-lang="es">{{ aboutTextEs }}</p>
+        <p data-lang="en" style="display: none">{{ aboutTextEn }}</p>
+        
+        <p data-lang="es">{{ additionalEs }}</p>
+        <p data-lang="en" style="display: none">{{ additionalEn }}</p>
+  
+        <div class="skills-container">
+          <div class="skills soft-skills">
+            <h2 data-lang="es">Soft Skills</h2>
+            <h2 data-lang="en" style="display: none">Soft Skills</h2>
+            <ul>
+              <li *ngFor="let skill of softSkillsEs" data-lang="es">{{ skill }}</li>
+              <li *ngFor="let skill of softSkillsEn" data-lang="en" style="display: none">{{ skill }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

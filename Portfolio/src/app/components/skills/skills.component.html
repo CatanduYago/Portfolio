@@ -1,0 +1,15 @@
+<div id="sec6" class="section">
+    <h1 class="title-skills" data-lang="es">{{ titleEs }}</h1>
+    <h1 class="title-skills" data-lang="en" style="display: none">{{ titleEn }}</h1>
+    <p data-lang="es">{{ descriptionEs }}</p>
+    <p data-lang="en" style="display: none">{{ descriptionEn }}</p>
+    
+    <div class="skills-section">
+      <div class="skill" *ngFor="let skill of skills">
+        <img [src]="skill.image" alt="{{ skill.nameEs }}" class="skill-icon" loading="lazy" />
+        <p data-lang="es">{{ skill.nameEs }}</p>
+        <p data-lang="en" style="display: none">{{ skill.nameEn }}</p>
+      </div>
+    </div>
+  </div>
+  

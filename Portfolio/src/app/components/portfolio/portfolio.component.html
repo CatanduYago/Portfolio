@@ -1,0 +1,24 @@
+<div id="sec2" class="section">
+    <h1 class="title-work" data-lang="es">{{ workTitleEs }}</h1>
+    <h1 class="title-work" data-lang="en" style="display: none">{{ workTitleEn }}</h1>
+    <p data-lang="es">{{ workDescEs }}</p>
+    <p data-lang="en" style="display: none">{{ workDescEn }}</p>
+    
+    <div class="portfolio-container">
+      <div class="portfolio-item" *ngFor="let project of projects">
+        <div class="portfolio-details">
+          <a [href]="project.link" target="_blank" class="portfolio-title" data-lang="es">
+            {{ project.titleEs }}
+          </a>
+          <a [href]="project.link" target="_blank" class="portfolio-title" data-lang="en" style="display: none">
+            {{ project.titleEn }}
+          </a>
+          <p data-lang="es">{{ project.descriptionEs }}</p>
+          <p data-lang="en" style="display: none">{{ project.descriptionEn }}</p>
+          <br *ngIf="project.image" />
+          <img *ngIf="project.image" [src]="project.image" loading="lazy" class="foto-proyecto" alt="{{ project.titleEs }} Screenshot" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
