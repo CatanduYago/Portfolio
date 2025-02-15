@@ -29,12 +29,12 @@ export class ExperienceComponent implements OnInit {
     const months = totalMonths % 12;
     let durationStr = '';
     if (years > 0) {
-      durationStr += `${years} ${years === 1 ? 'year' : 'years'}`;
+      durationStr += `${years} `;
     }
     if (months > 0) {
       if (durationStr) { durationStr += ' and '; }
-      durationStr += `${months} ${months === 1 ? 'month' : 'months'}`;
+      durationStr += `${months}`;
     }
-    return durationStr || '0 months';
+    return durationStr || '0';
   }
 }
