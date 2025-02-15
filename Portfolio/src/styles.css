@@ -241,8 +241,12 @@ body {
 }
 
 .experience-logo {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
   margin-right: 20px;
 }
+
 
 .logo-image {
   width: 80px;

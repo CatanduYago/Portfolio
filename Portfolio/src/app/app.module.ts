@@ -12,6 +12,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { SocialLinksComponent } from './components/social-links/social-links.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { ExperienceComponent } from './components/experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
     SkillsComponent,
     PortfolioComponent,
     SocialLinksComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,
