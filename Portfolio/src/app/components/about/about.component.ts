@@ -1,37 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
 })
-export class AboutComponent {
-  titleEs = 'Sobre mí';
-  titleEn = 'About Me';
-
-  aboutTextEs = `Soy un desarrollador web apasionado con experiencia en diversas tecnologías. Me gusta enfrentar desafíos y mejorar mis habilidades día a día.`;
-  aboutTextEn = `I am a passionate web developer with experience in various technologies. I enjoy facing challenges and improving my skills day by day.`;
-
-  additionalEs = `He trabajado en varios proyectos donde he podido desarrollar tanto habilidades técnicas como habilidades personales. Algunas de mis habilidades más destacadas son:`;
-  additionalEn = `I have worked on several projects where I have been able to develop both technical and personal skills. Some of my most notable skills are:`;
-
-  softSkillsEs: string[] = [
-    'Trabajo en equipo',
-    'Comunicación efectiva',
-    'Resolución de problemas',
-    'Trabajo bajo presión',
-    'Adaptabilidad',
-    'Proactividad',
-    'Análisis de resultados'
-  ];
-  softSkillsEn: string[] = [
-    'Teamwork',
-    'Effective communication',
-    'Problem solving',
-    'Under pressure work',
-    'Adaptability',
-    'Proactivity',
-    'Results analysis'
-  ];
-
+export class AboutComponent implements OnInit {
   aboutImage = 'assets/perfil.jpg';
+  softSkills: string[] = [];
+
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit(): void {
+    this.translate.get('ABOUT.SOFT_SKILLS').subscribe((skills: string[]) => {
+      this.softSkills = skills;
+    });
+  }
 }

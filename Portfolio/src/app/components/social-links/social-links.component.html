@@ -1,6 +1,5 @@
 <div class="social-icons">
-    <a *ngFor="let link of links" [href]="link.url" target="_blank" rel="noopener noreferrer">
-      <img [src]="link.image" loading="lazy" [alt]="link.alt" class="social-icon" />
-    </a>
-  </div>
-  
+  <a *ngFor="let link of links" [href]="link.url" target="_blank" rel="noopener noreferrer">
+    <img [src]="link.image" loading="lazy" [alt]="link.altKey | translate" class="social-icon" />
+  </a>
+</div>

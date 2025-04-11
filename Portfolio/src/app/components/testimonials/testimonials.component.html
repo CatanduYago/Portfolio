@@ -1,22 +1,17 @@
 <div id="sec3" class="section">
-    <h1 class="title-testimonials" data-lang="es">{{ titleEs }}</h1>
-    <h1 class="title-testimonials" data-lang="en" style="display: none">{{ titleEn }}</h1>
-    <p data-lang="es">{{ descriptionEs }}</p>
-    <p data-lang="en" style="display: none">{{ descriptionEn }}</p>
-    
-    <div class="testimonials">
-      <div class="testimonials-item" *ngFor="let testimonial of testimonials">
-        <a target="_blank" class="h-25 w-25 align-self-center" href="#">
-          <img [src]="testimonial.image" alt="Testimonial picture" class="h-100 w-100 rounded-circle" />
-        </a>
-        <div class="testimonials-details">
-          <p data-lang="es">{{ testimonial.textEs }}</p>
-          <p data-lang="en" style="display: none">{{ testimonial.textEn }}</p>
-          <p>{{ testimonial.name }}</p>
-          <p data-lang="es">{{ testimonial.roleEs }}</p>
-          <p data-lang="en" style="display: none">{{ testimonial.roleEn }}</p>
-        </div>
+  <h1 class="title-testimonials">{{ 'TESTIMONIALS.TITLE' | translate }}</h1>
+  <p>{{ 'TESTIMONIALS.DESCRIPTION' | translate }}</p>
+
+  <div class="testimonials">
+    <div class="testimonials-item" *ngFor="let testimonial of testimonials">
+      <a target="_blank" class="h-25 w-25 align-self-center" href="#">
+        <img [src]="testimonial.image" alt="Testimonial picture" class="h-100 w-100 rounded-circle" />
+      </a>
+      <div class="testimonials-details">
+        <p>{{ testimonial.textKey | translate }}</p>
+        <p>{{ testimonial.name }}</p>
+        <p>{{ testimonial.roleKey | translate }}</p>
       </div>
     </div>
   </div>
-  
+</div>

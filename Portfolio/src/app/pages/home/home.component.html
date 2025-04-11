@@ -7,12 +7,8 @@
 <app-testimonials></app-testimonials>
 
 <div id="sec4" class="section">
-  <h1 data-lang="es" class="title-contact">Contáctame</h1>
-  <h1 data-lang="en" class="title-contact" style="display: none">Contact</h1>
-  <p data-lang="es">Si quieres hablar conmigo o seguirme aquí puedes:</p>
-  <p data-lang="en" style="display: none">
-    Here you can talk with me or follow me:
-  </p>
+  <h1 class="title-contact">{{ 'CONTACT.TITLE' | translate }}</h1>
+  <p>{{ 'CONTACT.DESCRIPTION' | translate }}</p>
 
   <!-- Correo centrado -->
   <div class="contact-email">
@@ -36,4 +32,5 @@
     </a>
   </div>
 </div>
+
 <app-footer></app-footer>

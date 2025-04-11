@@ -1,28 +1,23 @@
 <div id="sec0" class="section">
-    <h1 class="title" data-lang="es">{{ titleEs }}</h1>
-    <h1 class="title" data-lang="en" style="display: none">{{ titleEn }}</h1>
-    
-    <div class="content-container">
-      <div>
-        <p data-lang="es">{{ descriptionEs }}</p>
-        <p data-lang="en" style="display: none">{{ descriptionEn }}</p>
-        <br />
-        <div class="availability-container">
-          <div class="availability-item">
-            <img src="assets/location-icon.png" alt="Ubicación" class="location-icon" />
-            <span data-lang="es">{{ locationEs }}</span>
-            <span data-lang="en" style="display: none">{{ locationEn }}</span>
-          </div>
-          <div class="availability-item">
-            <img src="assets/green-dot.gif" alt="Disponible" class="availability-gif" />
-            <span data-lang="es">{{ statusEs }}</span>
-            <span data-lang="en" style="display: none">{{ statusEn }}</span>
-          </div>
+  <h1 class="title">{{ 'HERO.TITLE' | translate }}</h1>
+
+  <div class="content-container">
+    <div>
+      <p>{{ 'HERO.DESCRIPTION' | translate }}</p>
+      <br />
+      <div class="availability-container">
+        <div class="availability-item">
+          <img src="assets/location-icon.png" alt="Ubicación" class="location-icon" />
+          <span>{{ 'HERO.LOCATION' | translate }}</span>
+        </div>
+        <div class="availability-item">
+          <img src="assets/green-dot.gif" alt="Disponible" class="availability-gif" />
+          <span>{{ 'HERO.STATUS' | translate }}</span>
         </div>
       </div>
-      <img [src]="profileImage" loading="lazy" alt="Foto de perfil" id="profile" />
     </div>
-    
-    <app-social-links></app-social-links>
+    <img [src]="profileImage" loading="lazy" alt="Foto de perfil" id="profile" />
   </div>
-  
+
+  <app-social-links></app-social-links>
+</div>

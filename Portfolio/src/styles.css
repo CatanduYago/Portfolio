@@ -242,8 +242,8 @@ body {
 
 .experience-logo {
   display: flex;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   margin-right: 20px;
 }
 
@@ -366,6 +366,16 @@ body {
 
 .social-links img:hover {
   transform: scale(1.2);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto  ;
+  color: #f1dec6;
+  background-color: #1d726f;
+  padding-top: 5px;
 }
 
 /* Para dispositivos móviles (max-width: 768px) */

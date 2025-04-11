@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 interface Skill {
   image: string;
-  nameEs: string;
-  nameEn: string;
+  key: string;
 }
 
 @Component({
@@ -11,29 +10,23 @@ interface Skill {
   templateUrl: './skills.component.html',
 })
 export class SkillsComponent {
-  titleEs = 'Skills';
-  titleEn = 'Skills';
-
-  descriptionEs = 'Estas son algunas de las habilidades que he adquirido durante mi curso:';
-  descriptionEn = 'These are some of the skills I have acquired during my career:';
-
   skills: Skill[] = [
-    { image: 'assets/oracle_database.png', nameEs: 'Oracle database', nameEn: 'Oracle database' },
-    { image: 'assets/postgresql.png', nameEs: 'PostgreSQL', nameEn: 'PostgreSQL' },
-    { image: 'assets/my_sql.png', nameEs: 'MySQL', nameEn: 'MySQL' },
-    { image: 'assets/Angular.png', nameEs: 'Angular', nameEn: 'Angular' },
-    { image: 'assets/Laravel.png', nameEs: 'Laravel', nameEn: 'Laravel' },
-    { image: 'assets/Nodejs.png', nameEs: 'Node.js', nameEn: 'Node.js' },
-    { image: 'assets/Bootstrap.png', nameEs: 'Bootstrap', nameEn: 'Bootstrap' },
-    { image: 'assets/SpringBoot.png', nameEs: 'Spring Boot', nameEn: 'Spring Boot' },
-    { image: 'assets/php.png', nameEs: 'PHP', nameEn: 'PHP' },
-    { image: 'assets/java.png', nameEs: 'Java', nameEn: 'Java' },
-    { image: 'assets/Java_script.png', nameEs: 'Java Script', nameEn: 'Java Script' },
-    { image: 'assets/hmtl5.png', nameEs: 'HTML', nameEn: 'HTML' },
-    { image: 'assets/css.png', nameEs: 'CSS', nameEn: 'CSS' },
-    { image: 'assets/Git.png', nameEs: 'Git', nameEn: 'Git' },
-    { image: 'assets/Docker.png', nameEs: 'Docker', nameEn: 'Docker' },
-    { image: 'assets/Vagrant.png', nameEs: 'Vagrant', nameEn: 'Vagrant' },
-    { image: 'assets/Figma.png', nameEs: 'Figma', nameEn: 'Figma' }
+    { image: 'assets/oracle_database.png', key: 'SKILLS.ITEMS.ORACLE_DATABASE' },
+    { image: 'assets/postgresql.png', key: 'SKILLS.ITEMS.POSTGRESQL' },
+    { image: 'assets/my_sql.png', key: 'SKILLS.ITEMS.MYSQL' },
+    { image: 'assets/Angular.png', key: 'SKILLS.ITEMS.ANGULAR' },
+    { image: 'assets/Laravel.png', key: 'SKILLS.ITEMS.LARAVEL' },
+    { image: 'assets/Nodejs.png', key: 'SKILLS.ITEMS.NODEJS' },
+    { image: 'assets/Bootstrap.png', key: 'SKILLS.ITEMS.BOOTSTRAP' },
+    { image: 'assets/SpringBoot.png', key: 'SKILLS.ITEMS.SPRING_BOOT' },
+    { image: 'assets/php.png', key: 'SKILLS.ITEMS.PHP' },
+    { image: 'assets/java.png', key: 'SKILLS.ITEMS.JAVA' },
+    { image: 'assets/Java_script.png', key: 'SKILLS.ITEMS.JAVASCRIPT' },
+    { image: 'assets/hmtl5.png', key: 'SKILLS.ITEMS.HTML' },
+    { image: 'assets/css.png', key: 'SKILLS.ITEMS.CSS' },
+    { image: 'assets/Git.png', key: 'SKILLS.ITEMS.GIT' },
+    { image: 'assets/Docker.png', key: 'SKILLS.ITEMS.DOCKER' },
+    { image: 'assets/Vagrant.png', key: 'SKILLS.ITEMS.VAGRANT' },
+    { image: 'assets/Figma.png', key: 'SKILLS.ITEMS.FIGMA' }
   ];
 }

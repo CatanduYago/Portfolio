@@ -5,22 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './experience.component.html',
 })
 export class ExperienceComponent implements OnInit {
-  experienceTitleEs = 'Experiencia';
-  experienceTitleEn = 'Experience';
-
-  descriptionEs = 'Aquí hay un resumen de mis experiencias recientes:';
-  descriptionEn = 'Here is a quick summary of my most recent experiences:';
-
   practiceCompany = 'Vitaly';
-  practiceRoleEs = 'Prácticas en Formación Profesional Dual';
-  practiceRoleEn = 'Dual Vocational Training Internship';
-  startDate: Date = new Date('2025-01-01'); 
+  startDate: Date = new Date('2025-01-01');
   duration: string = '';
 
   ngOnInit(): void {
     this.duration = this.getDuration(this.startDate);
   }
-
 
   getDuration(start: Date): string {
     const now = new Date();
@@ -29,7 +20,7 @@ export class ExperienceComponent implements OnInit {
     const months = totalMonths % 12;
     let durationStr = '';
     if (years > 0) {
-      durationStr += `${years} `;
+      durationStr += `${years}`;
     }
     if (months > 0) {
       if (durationStr) { durationStr += ' and '; }
@@ -38,3 +29,4 @@ export class ExperienceComponent implements OnInit {
     return durationStr || '0';
   }
 }
+

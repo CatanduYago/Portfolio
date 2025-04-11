@@ -1,28 +1,19 @@
 <div id="sec5" class="section">
-    <h1 class="title-experience" data-lang="es">{{ experienceTitleEs }}</h1>
-    <h1 class="title-experience" data-lang="en" style="display: none">{{ experienceTitleEn }}</h1>
-    
-    <div class="experience-container">
-      <!-- Nueva experiencia: Prácticas en Vitaly -->
-      <div class="experience-item">
-        <div class="experience-logo">
-          <img src="assets/vitaly-logo.png" loading="lazy" alt="Logo de Vitaly" class="logo-image center" />
+  <h1 class="title-experience">{{ 'EXPERIENCE.TITLE' | translate }}</h1>
+
+  <div class="experience-container">
+    <div class="experience-item">
+      <div class="experience-logo">
+        <img src="assets/vitaly-logo.png" loading="lazy" alt="Logo de Vitaly" class="logo-image center" />
+      </div>
+      <div class="experience-details">
+        <div class="experience-period">
+          {{ 'EXPERIENCE.PERIOD' | translate: { duration: duration } }}
         </div>
-        <div class="experience-details">
-          <div class="experience-period" data-lang="es">
-            Enero 2025 - Actualidad ({{ duration }} meses) 
-          </div>
-          <div class="experience-period" data-lang="en" style="display: none">
-            January 2025 - Present ({{ duration }} months) 
-          </div>
-          <p data-lang="es">
-            Actualmente estoy realizando las practicas de Formación Profesional tipo Dual en {{ practiceCompany }}.
-          </p>
-          <p data-lang="en" style="display: none">
-            Currently, I am doing a dual vocational training internship at {{ practiceCompany }}.
-          </p>
-        </div>
+        <p>
+          {{ 'EXPERIENCE.DESCRIPTION' | translate: { company: practiceCompany } }}
+        </p>
       </div>
     </div>
   </div>
-  
+</div>

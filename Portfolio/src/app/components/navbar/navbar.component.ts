@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,41 +7,26 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  currentLanguage: string = 'es'; // Idioma por defecto
-  languageIcon: string = 'assets/espana.png'; // Imagen del idioma por defecto
-  isMenuOpen = false;
+  currentLanguage: string = 'es';
+  languageIcon: string = 'assets/espana.png';
+
+  constructor(private translate: TranslateService) {
+    // Configurar el idioma por defecto y usarlo en el servicio de traducción
+    this.translate.setDefaultLang(this.currentLanguage);
+    this.translate.use(this.currentLanguage);
+  }
 
   toggleLanguage(): void {
+    // Cambiar entre 'es' y 'en' y actualizar el ícono de idioma
     if (this.currentLanguage === 'es') {
       this.currentLanguage = 'en';
-      this.languageIcon = 'assets/eeuu.png'; // Cambia la imagen a inglés
+      this.languageIcon = 'assets/eeuu.png';
     } else {
       this.currentLanguage = 'es';
-      this.languageIcon = 'assets/espana.png'; // Cambia la imagen a español
+      this.languageIcon = 'assets/espana.png';
     }
-    this.updateLanguage();
-  }
-
-  updateLanguage(): void {
-    const elements = document.querySelectorAll('[data-lang]');
-    elements.forEach((el) => {
-      const lang = (el as HTMLElement).getAttribute('data-lang');
-      if (lang === this.currentLanguage) {
-        (el as HTMLElement).style.display = '';
-      } else {
-        (el as HTMLElement).style.display = 'none';
-      }
-    });
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  checkScroll(): void {
-    const navbar = document.querySelector('.navbar') as HTMLElement;
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    // Activar el idioma seleccionado en el servicio
+    this.translate.use(this.currentLanguage);
   }
 
   downloadFile(): void {

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 interface SocialLink {
   url: string;
   image: string;
-  alt: string;
+  altKey: string;
 }
 
 @Component({
@@ -15,17 +15,17 @@ export class SocialLinksComponent {
     {
       url: 'https://github.com/CatanduYago',
       image: 'assets/github.png',
-      alt: 'GitHub'
+      altKey: 'SOCIAL.GITHUB'
     },
     {
       url: 'https://x.com/Ycatalanoa',
       image: 'assets/x.png',
-      alt: 'Twitter'
+      altKey: 'SOCIAL.TWITTER'
     },
     {
       url: 'https://www.linkedin.com/in/yago-catalano-andújar-24216828a',
       image: 'assets/linkedin.png',
-      alt: 'LinkedIn'
+      altKey: 'SOCIAL.LINKEDIN'
     }
   ];
 }
