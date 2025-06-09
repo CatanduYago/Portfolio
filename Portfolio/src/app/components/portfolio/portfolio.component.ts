@@ -15,7 +15,7 @@ export class PortfolioComponent {
   projects: Project[] = [
     {
       key: 'SUBTITLER',
-      link: 'https://catanduyago.github.io/Subtitler/',
+      link: 'https://transcribe.catanduyago.duckdns.org/',
       image: 'assets/subtitler.png'
     },
     {

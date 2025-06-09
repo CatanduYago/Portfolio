@@ -30,9 +30,17 @@ export class NavbarComponent {
   }
 
   downloadFile(): void {
+    // Seleccionar el archivo correcto en función del idioma actual
+    const fileName = this.currentLanguage === 'es'
+      ? 'Yago_CV.pdf'
+      : 'Yago_CV_en.pdf';
+
     const link = document.createElement('a');
-    link.href = 'assets/Yago_CV.pdf';
-    link.download = 'Yago_Catalano_Andújar_CV.pdf';
+    link.href = `assets/${fileName}`;
+    link.download = this.currentLanguage === 'es'
+      ? 'Yago_Catalano_Andújar_CV.pdf'
+      : 'Yago_Catalano_Andujar_CV.pdf';
     link.click();
   }
+
 }

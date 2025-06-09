@@ -112,3 +112,12 @@
   height: auto;
   border: none;
 }
+@media only screen and (max-width: 768px) {
+
+.navbar-download-btn {
+  background-color: #f1dec6;
+  color: #1d726f;
+  border: 2px solid #1d726f;
+  padding: 5px 13px;
+  cursor: pointer;
+}}
