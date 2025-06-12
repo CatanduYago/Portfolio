@@ -1,11 +1,20 @@
 <div id="sec3" class="section">
-  <h1 class="title-testimonials">{{ 'TESTIMONIALS.TITLE' | translate }}</h1>
-  <p>{{ 'TESTIMONIALS.DESCRIPTION' | translate }}</p>
+  <h1 class="title-testimonials">{{ "TESTIMONIALS.TITLE" | translate }}</h1>
+  <p>{{ "TESTIMONIALS.DESCRIPTION" | translate }}</p>
 
-  <div class="testimonials">
+  <div
+    class="testimonials"
+    [ngStyle]="{
+      'grid-template-columns': 'repeat(' + testimonialsColumns + ', 1fr)'
+    }"
+  >
     <div class="testimonials-item" *ngFor="let testimonial of testimonials">
-      <a target="_blank" class="h-25 w-25 align-self-center" href="#">
-        <img [src]="testimonial.image" alt="Testimonial picture" class="h-100 w-100 rounded-circle" />
+      <a target="_blank" class="testimonial-image" href="#">
+        <img
+          [src]="testimonial.image"
+          alt="Testimonial picture"
+          class="rounded-circle"
+        />
       </a>
       <div class="testimonials-details">
         <p>{{ testimonial.textKey | translate }}</p>

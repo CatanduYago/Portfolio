@@ -17,19 +17,15 @@ export class TestimonialsComponent {
       image: 'assets/borja.jpg',
       textKey: 'TESTIMONIALS.ITEMS.BORJA.TEXT',
       name: 'Borja Delgado Sánchez',
-      roleKey: 'TESTIMONIALS.ITEMS.BORJA.ROLE'
+      roleKey: 'TESTIMONIALS.ITEMS.BORJA.ROLE',
     },
-    {
-      image: 'assets/defpic.webp',
-      textKey: 'TESTIMONIALS.ITEMS.ALBERT.TEXT',
-      name: 'Albert Einstein',
-      roleKey: 'TESTIMONIALS.ITEMS.ALBERT.ROLE'
-    },
-    {
-      image: 'assets/defpic.webp',
-      textKey: 'TESTIMONIALS.ITEMS.ALBERT2.TEXT',
-      name: 'Albert Einstein',
-      roleKey: 'TESTIMONIALS.ITEMS.ALBERT2.ROLE'
-    }
   ];
+
+  get testimonialsColumns(): number {
+    const count = this.testimonials.length;
+    if (count === 1) return 1;
+    if (count === 2) return 2;
+    if (count === 4) return 2;
+    return Math.min(3, count);
+  }
 }

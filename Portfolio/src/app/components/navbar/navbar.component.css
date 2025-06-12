@@ -113,11 +113,29 @@
   border: none;
 }
 @media only screen and (max-width: 768px) {
+  .navbar-download-btn {
+    background-color: #f1dec6;
+    color: #1d726f;
+    border: 2px solid #1d726f;
+    padding: 5px 13px;
+    cursor: pointer;
+  }
+}
 
-.navbar-download-btn {
-  background-color: #f1dec6;
-  color: #1d726f;
-  border: 2px solid #1d726f;
-  padding: 5px 13px;
-  cursor: pointer;
-}}
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+  .navbar-logo {
+    padding-right: 200px;
+  }
+  .navbar-links {
+    gap: 10px;
+  }
+  .navbar-links li {
+    margin: 0 5px;
+  }
+  .language-switcher {
+    margin: 0px 10px 0px 5px;
+  }
+  .navbar-download-btn {
+    margin-left: 10px;
+  }
+}
