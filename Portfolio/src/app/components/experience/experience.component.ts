@@ -5,12 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './experience.component.html',
 })
 export class ExperienceComponent implements OnInit {
-  practiceCompany = 'Vitaly';
-  startDate: Date = new Date('2025-01-01');
-  duration: string = '';
+  experiences = [
+    {
+      key: 'VITALY',
+      logo: 'assets/vitaly-logo.png'
+    },
+    // Aqui puedo añadir otro objeto con el key y el logo correspondiente y en los archivos de lang
+];
 
   ngOnInit(): void {
-    this.duration = this.getDuration(this.startDate);
   }
 
   getDuration(start: Date): string {

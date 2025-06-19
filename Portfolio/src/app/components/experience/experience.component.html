@@ -1,17 +1,17 @@
 <div id="sec5" class="section">
   <h1 class="title-experience">{{ 'EXPERIENCE.TITLE' | translate }}</h1>
 
-  <div class="experience-container">
+  <div class="experience-container" *ngFor="let exp of experiences">
     <div class="experience-item">
       <div class="experience-logo">
-        <img src="assets/vitaly-logo.png" loading="lazy" alt="Logo de Vitaly" class="logo-image center" />
+        <img [src]="exp.logo" loading="lazy" [alt]="'Logo de ' + exp.key" class="logo-image center" />
       </div>
       <div class="experience-details">
         <div class="experience-period">
-          {{ 'EXPERIENCE.PERIOD' | translate: { duration: duration } }}
+          {{ ('EXPERIENCE.ITEMS.' + exp.key + '.PERIOD') | translate }}
         </div>
         <p>
-          {{ 'EXPERIENCE.DESCRIPTION' | translate: { company: practiceCompany } }}
+          {{ ('EXPERIENCE.ITEMS.' + exp.key + '.DESCRIPTION') | translate }}
         </p>
       </div>
     </div>
