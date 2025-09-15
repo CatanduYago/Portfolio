@@ -231,7 +231,7 @@ body {
 .experience-item {
   display: flex;
   align-self: center;
-  text-align: center;
+  text-align: justify;
   border: 2px solid #f1dec6;
   padding: 10px;
   width: 80%;
@@ -258,6 +258,7 @@ body {
 .experience-details p {
   max-width: 400px;
   white-space: pre-line;
+  text-align: justify;
 }
 
 .experience-period {

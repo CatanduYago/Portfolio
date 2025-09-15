@@ -10,6 +10,10 @@ export class ExperienceComponent implements OnInit {
       key: 'VITALY',
       logo: 'assets/vitaly-logo.png'
     },
+    {
+      key: 'VKS',
+      logo: 'assets/VKS-logo.png'
+    },
     // Aqui puedo añadir otro objeto con el key y el logo correspondiente y en los archivos de lang
 ];
 
