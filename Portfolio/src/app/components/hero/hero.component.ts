@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './hero.component.html',
 })
 export class HeroComponent {
-  profileImage = 'assets/About-me.jpeg';
+  profileImage = 'assets/perfil.png';
 }

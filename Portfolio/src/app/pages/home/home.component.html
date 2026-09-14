@@ -1,36 +1,38 @@
 <app-navbar></app-navbar>
-<app-hero></app-hero>
-<app-about></app-about>
-<app-skills></app-skills>
-<app-experience></app-experience>
-<app-portfolio></app-portfolio>
-<app-testimonials></app-testimonials>
 
-<div id="sec4" class="section">
-  <h1 class="title-contact">{{ 'CONTACT.TITLE' | translate }}</h1>
-  <p>{{ 'CONTACT.DESCRIPTION' | translate }}</p>
+<main>
+  <app-hero></app-hero>
+  <app-about></app-about>
+  <app-skills></app-skills>
+  <app-experience></app-experience>
+  <app-portfolio></app-portfolio>
+  <app-achievements></app-achievements>
+  <app-testimonials></app-testimonials>
 
-  <!-- Correo centrado -->
-  <div class="contact-email">
-    <img src="assets/email.png" loading="lazy" alt="Email icon" id="email-icon" />
-    <span>ycatalanoa01&#64;gmail.com</span>
-  </div>
+  <section id="sec4" class="section band-dark">
+    <h2 class="section-title">{{ 'CONTACT.TITLE' | translate }}</h2>
+    <p class="section-lead">{{ 'CONTACT.DESCRIPTION' | translate }}</p>
 
-  <!-- Logos de redes sociales -->
-  <div class="social-links">
-    <a href="https://github.com/catanduYago" target="_blank">
-      <img src="assets/github.png" loading="lazy" alt="GitHub icon" />
+    <a class="contact-email" href="mailto:ycatalanoa01&#64;gmail.com">
+      <img src="assets/email.png" loading="lazy" alt="" />
+      <span>ycatalanoa01&#64;gmail.com</span>
     </a>
-    <a href="https://twitter.com/ycatalanoa" target="_blank">
-      <img src="assets/x.png" loading="lazy" alt="Twitter icon" />
-    </a>
-    <a href="https://instagram.com/yago_candujar" target="_blank">
-      <img src="assets/instagram.png" loading="lazy" alt="Instagram icon" />
-    </a>
-    <a href="https://www.linkedin.com/in/yago-catalano-and%C3%BAjar-24216828a/" target="_blank">
-      <img src="assets/linkedin.png" loading="lazy" alt="LinkedIn icon" />
-    </a>
-  </div>
-</div>
+
+    <div class="social-links">
+      <a href="https://github.com/CatanduYago" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <img src="assets/github.png" loading="lazy" alt="GitHub" />
+      </a>
+      <a href="https://www.linkedin.com/in/yagocatalanoandujar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="assets/linkedin.png" loading="lazy" alt="LinkedIn" />
+      </a>
+      <a href="https://x.com/Ycatalanoa" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <img src="assets/x.png" loading="lazy" alt="X" />
+      </a>
+      <a href="https://instagram.com/yagomcqueenn" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="assets/instagram.png" loading="lazy" alt="Instagram" />
+      </a>
+    </div>
+  </section>
+</main>
 
 <app-footer></app-footer>

@@ -5,6 +5,7 @@ interface Testimonial {
   textKey: string;
   name: string;
   roleKey: string;
+  profile: string;
 }
 
 @Component({
@@ -18,14 +19,11 @@ export class TestimonialsComponent {
       textKey: 'TESTIMONIALS.ITEMS.BORJA.TEXT',
       name: 'Borja Delgado Sánchez',
       roleKey: 'TESTIMONIALS.ITEMS.BORJA.ROLE',
+      profile: 'https://www.linkedin.com/in/borja-delgado-sanchez-5298a7209/',
     },
   ];
 
   get testimonialsColumns(): number {
-    const count = this.testimonials.length;
-    if (count === 1) return 1;
-    if (count === 2) return 2;
-    if (count === 4) return 2;
-    return Math.min(3, count);
+    return Math.min(3, this.testimonials.length || 1);
   }
 }

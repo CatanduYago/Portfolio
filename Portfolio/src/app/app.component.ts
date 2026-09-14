@@ -1,19 +1,18 @@
-import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, OnInit } from '@angular/core';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Portfolio';
 
-  constructor(private translate: TranslateService) {
-    // Definir los idiomas disponibles
-    this.translate.addLangs(['en', 'es']);
-    // Establecer un idioma por defecto
-    this.translate.setDefaultLang('es');
+  constructor(private language: LanguageService) {}
 
+  ngOnInit(): void {
+    // Default language is English; a stored preference wins if present.
+    this.language.init();
   }
 }

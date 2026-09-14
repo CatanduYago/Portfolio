@@ -1,19 +1,64 @@
-<div id="sec5" class="section">
-  <h1 class="title-experience">{{ 'EXPERIENCE.TITLE' | translate }}</h1>
+<section id="sec5" class="section band-dark">
+  <h2 class="section-title">
+    {{ 'EXPERIENCE.TITLE' | translate }}
+    <span class="experience-total">
+      {{ 'EXPERIENCE.TOTAL' | translate }}: {{ totalDuration() }}
+    </span>
+  </h2>
+  <p class="section-lead">{{ 'EXPERIENCE.DESCRIPTION' | translate }}</p>
 
-  <div class="experience-container" *ngFor="let exp of experiences">
-    <div class="experience-item">
-      <div class="experience-logo">
-        <img [src]="exp.logo" loading="lazy" [alt]="'Logo de ' + exp.key" class="logo-image center" />
-      </div>
-      <div class="experience-details">
-        <div class="experience-period">
-          {{ ('EXPERIENCE.ITEMS.' + exp.key + '.PERIOD') | translate }}
+  <div class="timeline">
+    <div
+      class="timeline-item"
+      *ngFor="let exp of experiences"
+      [class.is-current]="exp.current"
+    >
+      <article class="experience-item surface">
+        <div class="experience-logo">
+          <img
+            *ngIf="exp.logo; else monogram"
+            [src]="exp.logo"
+            loading="lazy"
+            [alt]="('EXPERIENCE.ITEMS.' + exp.key + '.COMPANY') | translate"
+            class="logo-image"
+          />
+          <ng-template #monogram>
+            <div class="logo-monogram" aria-hidden="true">{{ exp.monogram }}</div>
+          </ng-template>
         </div>
-        <p>
-          {{ ('EXPERIENCE.ITEMS.' + exp.key + '.DESCRIPTION') | translate }}
-        </p>
-      </div>
+
+        <div class="experience-details">
+          <div class="experience-head">
+            <div>
+              <h3 class="experience-role">
+                {{ ('EXPERIENCE.ITEMS.' + exp.key + '.ROLE') | translate }}
+                <span class="badge-current" *ngIf="exp.current">
+                  {{ 'EXPERIENCE.CURRENT' | translate }}
+                </span>
+              </h3>
+              <p class="experience-company">
+                {{ ('EXPERIENCE.ITEMS.' + exp.key + '.COMPANY') | translate }}
+                &middot; {{ ('EXPERIENCE.ITEMS.' + exp.key + '.LOCATION') | translate }}
+              </p>
+            </div>
+            <div class="experience-period">
+              {{ ('EXPERIENCE.ITEMS.' + exp.key + '.PERIOD') | translate }}
+              <br />
+              {{ duration(exp) }}
+            </div>
+          </div>
+
+          <ul class="experience-bullets">
+            <li *ngFor="let line of (('EXPERIENCE.ITEMS.' + exp.key + '.BULLETS') | translate)">
+              {{ line }}
+            </li>
+          </ul>
+
+          <div class="chip-row" *ngIf="exp.tech.length">
+            <span class="chip" *ngFor="let tech of exp.tech">{{ tech }}</span>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
-</div>
+</section>

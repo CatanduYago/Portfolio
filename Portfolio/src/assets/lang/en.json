@@ -1,89 +1,61 @@
 {
   "NAVBAR": {
-    "ABOUT": "About Me",
-    "WORK": "Work",
+    "ABOUT": "About",
+    "EXPERIENCE": "Experience",
+    "WORK": "Projects",
+    "ACHIEVEMENTS": "Awards & education",
     "TESTIMONIALS": "Testimonials",
     "CONTACT": "Contact",
     "DOWNLOAD_CV": "Download CV",
-    "EXPERIENCE": "Experience"
+    "MENU": "Open menu"
   },
   "LANG": {
-    "SHORT": "ENG"
+    "SHORT": "EN",
+    "SWITCH": "Switch to Spanish"
   },
   "HERO": {
-    "TITLE": "Hi, I'm Yago! 👋",
-    "DESCRIPTION": "I am a higher education student in web development with practical experience in developing web applications using technologies like Angular and Node.js. During my studies, I have worked with tools like PostgreSQL and MySQL. Although I am in the early stages of my career, I am deeply passionate about web development and enjoy every opportunity to learn and grow in this field.",
-    "LOCATION": "Badajoz, Spain",
-    "STATUS": "Student"
+    "EYEBROW": "Full stack developer",
+    "TITLE": "Hi, I'm Yago 👋",
+    "ROLE": "Backend Software Developer · NestJS · SQL · REST APIs · Docker",
+    "DESCRIPTION": "I build backend services and REST APIs for enterprise fintech and international payment infrastructure at Silice. I work mostly with Java, NestJS and SQL databases, and I care about clean, maintainable code. Outside of work I build things with Angular and Spring Boot, and I keep an eye on distributed systems, Arduino and robotics.",
+    "LOCATION": "Mérida, Spain · Hybrid",
+    "STATUS": "SpainSkills 2026 finalist"
   },
   "ABOUT": {
-    "TITLE": "About Me",
-    "ABOUT_TEXT": "I am a passionate web developer with experience in various technologies. I enjoy facing challenges and improving my skills day by day.",
-    "ADDITIONAL": "I have worked on several projects where I have been able to develop both technical and personal skills. Some of my most notable skills are:",
-    "SOFT_SKILLS_TITLE": "Soft Skills",
+    "TITLE": "About me",
+    "PARAGRAPH_1": "I'm a full stack software developer at Silice España, where I contribute to enterprise fintech solutions and international payment infrastructure. Day to day that means designing backend services, building and maintaining REST APIs, and working with SQL databases and payment workflows alongside an agile team.",
+    "PARAGRAPH_2": "I trained as a Higher Technician in Web Application Development at IES Castelar, won Extremadura Skills 2025 in the Web Development category, and went on to compete as a finalist at SpainSkills 2026. Competing taught me as much as any classroom did: how to work under real time pressure and how to ship something that actually holds up.",
+    "PARAGRAPH_3": "Outside of work I build personal projects with Angular, Spring Boot and cloud services, and I enjoy learning about distributed systems, Arduino and robotics.",
+    "SOFT_SKILLS_TITLE": "Soft skills",
     "SOFT_SKILLS": [
       "Teamwork",
       "Effective communication",
       "Problem solving",
-      "Under pressure work",
+      "Working under pressure",
       "Adaptability",
       "Proactivity",
-      "Results analysis"
+      "Strategic analysis"
+    ],
+    "FACTS_TITLE": "Quick facts",
+    "FACTS": [
+      { "LABEL": "Based in", "VALUE": "Mérida, Extremadura (Spain)" },
+      { "LABEL": "Currently", "VALUE": "Full stack developer at Silice España" },
+      { "LABEL": "Languages", "VALUE": "Spanish (native) · English (B2, working towards C2)" },
+      { "LABEL": "Focus", "VALUE": "Backend services, REST APIs and relational databases" }
     ]
-  },
-  "CONTACT": {
-    "TITLE": "Contact",
-    "DESCRIPTION": "Here you can talk with me or follow me:"
-  },
-  "EXPERIENCE": {
-    "TITLE": "Experience",
-    "ITEMS": {
-      "VITALY": {
-        "PERIOD": "January 2025 - June 2025 (6 months)",
-        "DESCRIPTION": "As part of a development team, I contributed to the maintenance and implementation of improvements in back-end logic as well as responsive optimizations on the front-end, ensuring solid performance and a seamless user experience across devices. I also developed and deployed a complete CRM, managing the entire project lifecycle from conception to production. Additionally, I worked on API documentation using Swagger to facilitate understanding and integration, and implemented persistent improvements in the database to ensure efficiency and scalability."
-      },
-      "VKS": {
-        "PERIOD": "June 2025 - Present",
-        "DESCRIPTION": "I designed and developed a website for an esports team from Extremadura. I led the ideation of user-facing interactivity, created the full visual design in Figma, and built the site solo with Angular 20, preparing it for future server deployment. I also built a secondary page for AEXVES that links to the interactive site, aligning with the main site's design and implementing it in WIX for later publication."
-      }
-    }
-  },
-      "FOOTER": {
-    "COPYRIGHT": "© 2025 | Designed and developed with ❤️ by Yago Catalano Andújar"
-  },
-  "WORK.TITLE": "Work",
-  "WORK.DESCRIPTION": "These are some of the projects I have built:",
-  "PROJECTS": {
-    "SUBTITLER": {
-      "TITLE": "Subtitler: Live",
-      "DESCRIPTION": "This web application allows you to capture screen audio in real time and transcribe it using Amazon Transcribe. Developed with JavaScript and Amazon Transcribe."
-    },
-    "WISHLIST": {
-      "TITLE": "Wishlist",
-      "DESCRIPTION": "Responsive wishlist website with filters made using Angular and Bootstrap."
-    },
-    "MAZAOGYM": {
-      "TITLE": "MazaoGym",
-      "DESCRIPTION": "Gym project completed for the end of one of the first-year DAW courses using PHP."
-    },
-    "DUNGEON": {
-      "TITLE": "Dungeon game in Java",
-      "DESCRIPTION": "Dungeon game programmed in Java using JavaFX. End-of-course programming project."
-    },
-    "PORTFOLIO": {
-      "TITLE": "CatanduYago.github.io",
-      "DESCRIPTION": "This is my Github pages repository where I deploy most of my apps."
-    },
-    "VKS": {
-  "TITLE": "Valkiria's Vikings",
-  "DESCRIPTION": "This website was designed and developed by me as part of a project for the esports team from Extremadura, Valkiria's Vikings. It has not yet been published due to reasons beyond development."
-}
   },
   "SKILLS": {
     "TITLE": "Skills",
-    "DESCRIPTION": "These are some of the skills I have acquired during my career:",
+    "DESCRIPTION": "The technologies I use at work and in my own projects.",
+    "GROUPS": {
+      "BACKEND": "Backend",
+      "DATABASES": "Databases",
+      "FRONTEND": "Frontend & design",
+      "TOOLING": "Tooling & DevOps",
+      "OTHER": "Also working with"
+    },
     "ITEMS": {
-      "ORACLE_DATABASE": "Oracle database",
+      "ORACLE_DATABASE": "Oracle Database",
       "POSTGRESQL": "PostgreSQL",
       "MYSQL": "MySQL",
       "ANGULAR": "Angular",
@@ -92,8 +64,9 @@
       "BOOTSTRAP": "Bootstrap",
       "SPRING_BOOT": "Spring Boot",
       "PHP": "PHP",
+      "NESTJS": "NestJS",
       "JAVA": "Java",
-      "JAVASCRIPT": "Java Script",
+      "JAVASCRIPT": "JavaScript",
       "HTML": "HTML",
       "CSS": "CSS",
       "GIT": "Git",
@@ -103,24 +76,161 @@
       "JSP": "JavaServer Pages"
     }
   },
-  "SOCIAL": {
-    "GITHUB": "GitHub",
-    "TWITTER": "Twitter",
-    "LINKEDIN": "LinkedIn"
+  "EXPERIENCE": {
+    "TITLE": "Experience",
+    "DESCRIPTION": "Where I've worked and what I actually did there.",
+    "CURRENT": "Current",
+    "TOTAL": "Total",
+    "ITEMS": {
+      "SILICE": {
+        "ROLE": "Full Stack Developer",
+        "COMPANY": "Silice España · Full-time",
+        "LOCATION": "Mérida · Hybrid",
+        "PERIOD": "May 2026 — Present",
+        "BULLETS": [
+          "Develop backend services using Java and NestJS for enterprise fintech products.",
+          "Design and maintain REST APIs consumed across internal and client-facing systems.",
+          "Work with SQL databases and international payment workflows.",
+          "Collaborate in agile development teams using Git and Jira."
+        ]
+      },
+      "VKS": {
+        "ROLE": "Designer & Web Developer",
+        "COMPANY": "Valkirias Vikings · Freelance",
+        "LOCATION": "Remote",
+        "PERIOD": "Jun 2025 — Mar 2026",
+        "BULLETS": [
+          "Designed the full user interface in Figma, from wireframes to the final visual system.",
+          "Built the frontend in Angular with reusable components.",
+          "Developed the supporting backend functionality.",
+          "Implemented responsive layouts and interactive features across devices.",
+          "Owned the project end to end, from the first design to deployment prep."
+        ]
+      },
+      "VITALY": {
+        "ROLE": "Web Developer",
+        "COMPANY": "VITALY · Dual VET + training contract",
+        "LOCATION": "Badajoz · Hybrid",
+        "PERIOD": "Jan 2025 — Jun 2025",
+        "BULLETS": [
+          "Designed the relational schema in Oracle for a complete CRM: entities, relationships, foreign keys and constraints (DDL).",
+          "Implemented stored procedures and triggers in Oracle to automate business logic.",
+          "Integrated the database with a Spring Boot backend using JPA/JPQL, exposing it through a Swagger-documented REST API.",
+          "Built the CRM frontend in Angular.",
+          "Maintained and improved existing production applications built with JSP and Oracle Database, fixing backend logic and adding responsive improvements to the Angular frontend."
+        ]
+      },
+      "PWN": {
+        "ROLE": "Esports Player",
+        "COMPANY": "PWN Esports Collective",
+        "LOCATION": "Badajoz · Remote",
+        "PERIOD": "Jun 2023 — Oct 2023",
+        "BULLETS": [
+          "Competed as a Valorant player in the Spanish academy project of a Latin American esports organisation.",
+          "Contributed to game strategy and opponent analysis beyond regular practice.",
+          "Left the project to focus on my studies, taking with me a lot of practice in strategic analysis and teamwork under pressure."
+        ]
+      }
+    }
+  },
+  "WORK": {
+    "TITLE": "Projects",
+    "DESCRIPTION": "A selection of things I've designed, built and shipped."
+  },
+  "PROJECTS": {
+    "SUBTITLER": {
+      "TITLE": "Subtitler: Live",
+      "META": "Final degree project",
+      "DESCRIPTION": "Live content platforms like Twitch, Kick and YouTube still fall short on accessibility, so I built Subtitler: Live as my final project for the Higher Technician in Web Application Development. It captures the audio of a browser tab the user selects, sends fragments to AWS S3 every few seconds, and returns near real-time subtitles through Amazon Transcribe — aimed at people with hearing impairments, and at talks and conferences with no budget for interpreters."
+    },
+    "VKS": {
+      "TITLE": "Valkiria's Vikings",
+      "META": "Freelance · Design + development",
+      "DESCRIPTION": "Website designed and developed for the Extremaduran esports team Valkiria's Vikings. I handled the complete Figma design, the Angular frontend with reusable components and the interactive features, plus a secondary page for AEXVES built in WIX that matches the main site's design."
+    },
+    "WISHLIST": {
+      "TITLE": "Wishlist",
+      "META": "Personal project",
+      "DESCRIPTION": "Responsive wishlist app with filtering, built with Angular and Bootstrap."
+    },
+    "MAZAOGYM": {
+      "TITLE": "MazaoGym",
+      "META": "Coursework",
+      "DESCRIPTION": "Gym management site built in PHP with a MySQL backend, as the final assignment for one of my first-year Web Application Development subjects."
+    },
+    "DUNGEON": {
+      "TITLE": "Dungeon game in Java",
+      "META": "Coursework",
+      "DESCRIPTION": "Dungeon crawler written in Java with JavaFX, as the end-of-course programming project."
+    },
+    "PORTFOLIO": {
+      "TITLE": "CatanduYago.github.io",
+      "META": "Open source",
+      "DESCRIPTION": "My GitHub Pages repository, where I deploy most of my projects — including this portfolio."
+    }
+  },
+  "ACHIEVEMENTS": {
+    "TITLE": "Awards & education",
+    "DESCRIPTION": "Competitions, training and certifications.",
+    "ITEMS": {
+      "SPAINSKILLS": {
+        "KIND": "Award",
+        "TITLE": "SpainSkills 2026 Finalist",
+        "META": "General Secretariat for Vocational Education and Training · Mar 2026",
+        "DESCRIPTION": "Finalist in the Web Development category of the Spanish national vocational skills competition, representing Extremadura."
+      },
+      "EXTREMADURA_SKILLS": {
+        "KIND": "Award",
+        "TITLE": "Extremadura Skills 2025 Winner",
+        "META": "FP Extremadura · May 2025",
+        "DESCRIPTION": "First place in the Web Development category, qualifying to represent Extremadura at SpainSkills 2026."
+      },
+      "CTF": {
+        "KIND": "Award",
+        "TITLE": "2nd place — IES Castelar CyberCTF",
+        "META": "IES Castelar · Jan 2025",
+        "DESCRIPTION": "Runner-up in the capture-the-flag cybersecurity competition organised by my school."
+      },
+      "DAW": {
+        "KIND": "Education",
+        "TITLE": "Higher Technician in Web Application Development",
+        "META": "IES Castelar · 2023 — 2025",
+        "DESCRIPTION": "Higher vocational training covering backend and frontend development, relational databases, deployment and software design."
+      },
+      "BACHILLERATO": {
+        "KIND": "Education",
+        "TITLE": "Technological Baccalaureate",
+        "META": "IES Bioclimático · 2020 — 2023",
+        "DESCRIPTION": "Science and technology track, including technical drawing and CAD."
+      },
+      "ENGLISH": {
+        "KIND": "Certification",
+        "TITLE": "Cambridge English B2",
+        "META": "Cambridge University Press & Assessment · Nov 2021",
+        "DESCRIPTION": "Full professional working proficiency in English. Currently preparing for C2."
+      }
+    }
   },
   "TESTIMONIALS": {
     "TITLE": "Testimonials",
-    "DESCRIPTION": "People that talk great about me:",
+    "DESCRIPTION": "What people I've worked and studied with have to say.",
     "ITEMS": {
       "BORJA": {
-        "TEXT": "\"An exceptional teammate, a web development student with great talent. Always attentive and with an incredible ability to grasp even the most complex concepts. His skill in solving technical problems is impressive, and his dedication makes him a key asset in any team. Intelligent, proactive, and with a positive attitude. Highly recommended!\"",
-        "ROLE": "Classmate"
-      },
-      "ALBERT": {
-        "TEXT": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt risus a blandit tristique. Duis pretium eu libero ut lacinia. Phasellus eget rhoncus mi.\"",
-        "ROLE": "BBC CEO"
+        "TEXT": "An exceptional teammate — a hugely talented web development student. Always attentive, with an incredible ability to grasp even the most complex concepts. His skill at solving technical problems is impressive, and his dedication makes him a key asset on any team. Smart, proactive and positive. Highly recommended!",
+        "ROLE": "Classmate · Web Application Development"
       }
     }
+  },
+  "CONTACT": {
+    "TITLE": "Get in touch",
+    "DESCRIPTION": "Open to interesting backend and full stack work. The fastest way to reach me is email or LinkedIn."
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© 2026 · Designed and built with ❤️ by Yago Catalano Andújar"
+  },
+  "SOCIAL": {
+    "GITHUB": "GitHub",
+    "TWITTER": "X",
+    "LINKEDIN": "LinkedIn"
   }
 }
-

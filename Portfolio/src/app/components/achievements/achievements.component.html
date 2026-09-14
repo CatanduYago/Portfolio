@@ -1,0 +1,13 @@
+<section id="sec7" class="section band-dark">
+  <h2 class="section-title">{{ 'ACHIEVEMENTS.TITLE' | translate }}</h2>
+  <p class="section-lead">{{ 'ACHIEVEMENTS.DESCRIPTION' | translate }}</p>
+
+  <div class="achievements-grid">
+    <article class="achievement-card surface" *ngFor="let item of items">
+      <span class="eyebrow">{{ ('ACHIEVEMENTS.ITEMS.' + item + '.KIND') | translate }}</span>
+      <h3>{{ ('ACHIEVEMENTS.ITEMS.' + item + '.TITLE') | translate }}</h3>
+      <div class="meta">{{ ('ACHIEVEMENTS.ITEMS.' + item + '.META') | translate }}</div>
+      <p>{{ ('ACHIEVEMENTS.ITEMS.' + item + '.DESCRIPTION') | translate }}</p>
+    </article>
+  </div>
+</section>

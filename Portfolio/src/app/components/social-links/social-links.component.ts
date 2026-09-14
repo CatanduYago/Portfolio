@@ -15,17 +15,17 @@ export class SocialLinksComponent {
     {
       url: 'https://github.com/CatanduYago',
       image: 'assets/github.png',
-      altKey: 'SOCIAL.GITHUB'
+      altKey: 'SOCIAL.GITHUB',
+    },
+    {
+      url: 'https://www.linkedin.com/in/yagocatalanoandujar/',
+      image: 'assets/linkedin.png',
+      altKey: 'SOCIAL.LINKEDIN',
     },
     {
       url: 'https://x.com/Ycatalanoa',
       image: 'assets/x.png',
-      altKey: 'SOCIAL.TWITTER'
+      altKey: 'SOCIAL.TWITTER',
     },
-    {
-      url: 'https://www.linkedin.com/in/yago-catalano-andújar-24216828a',
-      image: 'assets/linkedin.png',
-      altKey: 'SOCIAL.LINKEDIN'
-    }
   ];
 }

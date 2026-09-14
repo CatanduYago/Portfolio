@@ -1,141 +1,171 @@
 .navbar {
   position: sticky;
   top: 0;
-  background-color: #f1dec6;
-  font-weight: 400;
-  font-size: 16px;
-  padding: 10px;
+  z-index: 100;
+  min-height: var(--nav-h);
+  background-color: rgba(247, 235, 217, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 2px solid transparent;
+  padding: 10px 0;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.navbar.scrolled {
+  border-bottom-color: var(--teal);
+  box-shadow: 0 6px 22px rgba(42, 35, 32, 0.08);
 }
 
 .navbar-content {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  gap: 24px;
   width: 100%;
+  max-width: var(--container);
   margin: 0 auto;
+  padding: 0 24px;
 }
 
-.navbar.scrolled {
-  border-bottom: 2px solid #1d726f;
+.navbar-brand-link {
+  display: inline-flex;
+  flex-shrink: 0;
 }
 
 .navbar-logo {
-  height: 50px;
-  padding-right: 450px;
+  height: 46px;
 }
+
 .navbar-logo-mobile {
-  height: 50px;
+  height: 42px;
 }
 
 .navbar-links {
   list-style: none;
   display: flex;
+  align-items: center;
+  gap: 4px;
   margin: 0;
-  padding: 0px;
-  gap: 15px;
-}
-
-.navbar-links li :hover,
-.nav-link {
-  color: #1d726f;
-}
-
-.vl {
-  border-left: 2px solid #1d726f;
-  height: 30px;
-  margin: 0px 20px 0px;
+  padding: 0;
 }
 
 .navbar-links li {
   white-space: nowrap;
-  margin: 0 15px;
-  padding: 0px 5px 0px;
-  font-weight: 500;
 }
 
 .navbar-links a {
+  position: relative;
+  display: inline-block;
+  padding: 6px 12px;
   text-decoration: none;
-  color: #679e9c;
+  color: var(--teal);
   font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 0;
+  height: 2px;
+  background: var(--terracotta);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease);
+}
+
+.navbar-links a:hover {
+  color: var(--terracotta);
+}
+
+.navbar-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 4px 10px;
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.language-switcher:hover {
+  border-color: var(--teal);
+  color: var(--terracotta);
+}
+
+.language-icon {
+  height: 22px;
+  width: 22px;
+  object-fit: contain;
 }
 
 .navbar-download-btn {
   white-space: nowrap;
-  color: #1d726f;
-  padding: 7px 15px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-.nav-link.navbar-download-btn {
-  width: fit-content;
-}
-
-.language-switcher {
-  display: flex;
-  align-items: center;
-  background: none;
-  border: none;
+  background: var(--teal);
+  color: var(--cream);
+  border: 2px solid var(--teal);
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 0.92rem;
   cursor: pointer;
-  padding: 0;
-  margin: 0px 25px 0px 10px;
-}
-.language-switcher:hover {
-  scale: 1.1;
-  font-size: 16px;
-}
-.language-icon {
-  height: 35px;
-}
-.language-desc {
-  margin-right: 10px;
-  color: #1d726f;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease),
+    transform 0.25s var(--ease);
 }
 
 .navbar-download-btn:hover {
-  background-color: #f1dec6;
-  color: #1d726f;
-  border: 2px solid #1d726f;
-  padding: 5px 13px;
-  cursor: pointer;
+  background: transparent;
+  color: var(--teal);
+  transform: translateY(-2px);
 }
+
 .navbar-toggler {
   border: none;
   outline: none;
-  transition: 1s;
 }
 
 .navbar-toggler:focus {
   box-shadow: none;
 }
+
 .navbar-toggler-icon img {
-  width: 30px;
+  width: 28px;
   height: auto;
-  border: none;
-}
-@media only screen and (max-width: 768px) {
-  .navbar-download-btn {
-    background-color: #f1dec6;
-    color: #1d726f;
-    border: 2px solid #1d726f;
-    padding: 5px 13px;
-    cursor: pointer;
-  }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1200px) {
-  .navbar-logo {
-    padding-right: 200px;
+@media only screen and (max-width: 1199px) {
+  .navbar-nav {
+    gap: 4px;
+    padding-top: 10px;
   }
-  .navbar-links {
-    gap: 10px;
+
+  .navbar-nav .nav-link {
+    color: var(--teal);
+    font-weight: 500;
   }
-  .navbar-links li {
-    margin: 0 5px;
-  }
-  .language-switcher {
-    margin: 0px 10px 0px 5px;
-  }
-  .navbar-download-btn {
-    margin-left: 10px;
+
+  .navbar-nav .language-switcher,
+  .navbar-nav .navbar-download-btn {
+    width: fit-content;
+    margin-top: 6px;
   }
 }

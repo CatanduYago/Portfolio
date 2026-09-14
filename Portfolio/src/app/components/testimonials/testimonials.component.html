@@ -1,26 +1,25 @@
-<div id="sec3" class="section">
-  <h1 class="title-testimonials">{{ "TESTIMONIALS.TITLE" | translate }}</h1>
-  <p>{{ "TESTIMONIALS.DESCRIPTION" | translate }}</p>
+<section id="sec3" class="section band-light">
+  <h2 class="section-title">{{ 'TESTIMONIALS.TITLE' | translate }}</h2>
+  <p class="section-lead">{{ 'TESTIMONIALS.DESCRIPTION' | translate }}</p>
 
   <div
     class="testimonials"
-    [ngStyle]="{
-      'grid-template-columns': 'repeat(' + testimonialsColumns + ', 1fr)'
-    }"
+    [ngStyle]="{ 'grid-template-columns': 'repeat(' + testimonialsColumns + ', minmax(0, 1fr))' }"
   >
-    <div class="testimonials-item" *ngFor="let testimonial of testimonials">
-      <a target="_blank" class="testimonial-image" href="#">
-        <img
-          [src]="testimonial.image"
-          alt="Testimonial picture"
-          class="rounded-circle"
-        />
+    <figure class="testimonials-item surface" *ngFor="let testimonial of testimonials">
+      <a
+        class="testimonial-image"
+        [href]="testimonial.profile"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img [src]="testimonial.image" [alt]="testimonial.name" />
       </a>
-      <div class="testimonials-details">
-        <p>{{ testimonial.textKey | translate }}</p>
-        <p>{{ testimonial.name }}</p>
-        <p>{{ testimonial.roleKey | translate }}</p>
-      </div>
-    </div>
+      <figcaption class="testimonials-details">
+        <p class="testimonial-quote">{{ testimonial.textKey | translate }}</p>
+        <p class="testimonial-name">{{ testimonial.name }}</p>
+        <p class="testimonial-role">{{ testimonial.roleKey | translate }}</p>
+      </figcaption>
+    </figure>
   </div>
-</div>
+</section>

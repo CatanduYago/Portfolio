@@ -1,48 +1,97 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
+
+interface Experience {
+  key: string;
+  /** Logo path, or null to render the monogram fallback. */
+  logo: string | null;
+  monogram?: string;
+  start: Date;
+  /** Undefined means the role is ongoing. */
+  end?: Date;
+  current?: boolean;
+  tech: string[];
+}
 
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
 })
-export class ExperienceComponent implements OnInit {
-  experiences = [
+export class ExperienceComponent {
+  /** Newest first. Dates drive the auto-calculated durations. */
+  experiences: Experience[] = [
     {
-      key: 'VITALY',
-      logo: 'assets/vitaly-logo.png'
+      key: 'SILICE',
+      logo: 'assets/silice-logo.jpg',
+      monogram: 'SILICE',
+      start: new Date(2026, 4, 1), // May 2026
+      current: true,
+      tech: ['NestJS', 'Java', 'REST APIs', 'SQL', 'Git', 'Jira', 'Angular'],
     },
     {
       key: 'VKS',
-      logo: 'assets/VKS-logo.png'
+      logo: 'assets/VKS-logo.png',
+      start: new Date(2025, 5, 1), // June 2025
+      end: new Date(2026, 2, 1), // March 2026
+      tech: ['Angular', 'TypeScript', 'Figma', 'Responsive design', 'SCSS'],
     },
-    // Aqui puedo añadir otro objeto con el key y el logo correspondiente y en los archivos de lang
-];
+    {
+      key: 'VITALY',
+      logo: 'assets/vitaly-logo.png',
+      start: new Date(2025, 0, 1), // January 2025
+      end: new Date(2025, 5, 1), // June 2025
+      tech: [
+        'Spring Boot',
+        'Angular',
+        'Oracle Database',
+        'JPA / JPQL',
+        'Swagger',
+        'JSP',
+      ],
+    },
+  ];
 
-  ngOnInit(): void {
+  constructor(private language: LanguageService) {}
+
+  /** "1 yr 4 mos" / "1 a 4 m", recalculated on every render for ongoing roles. */
+  duration(exp: Experience): string {
+    const months = this.durationMonths(exp);
+    return this.formatDuration(months);
   }
 
-  getDuration(start: Date): string {
-    const now = new Date();
-    let totalMonths = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+  /** Combined experience time, preserving the duration convention of each role. */
+  totalDuration(): string {
+    const months = this.experiences.reduce(
+      (total, experience) => total + this.durationMonths(experience),
+      0,
+    );
+    return this.formatDuration(months);
+  }
 
-    // Ajuste: contar el mes actual si el día ya es igual o mayor
-    if (now.getDate() >= start.getDate()) {
-      totalMonths += 1;
+  private durationMonths(exp: Experience): number {
+    const end = exp.end ?? new Date();
+    let months =
+      (end.getFullYear() - exp.start.getFullYear()) * 12 +
+      (end.getMonth() - exp.start.getMonth()) +
+      1;
+    if (months < 1) {
+      months = 1;
     }
+    return months;
+  }
 
-    const years = Math.floor(totalMonths / 12);
-    const months = totalMonths % 12;
+  private formatDuration(months: number): string {
+    const years = Math.floor(months / 12);
+    const rest = months % 12;
+    const es = this.language.current === 'es';
 
-    let durationStr = '';
+    const parts: string[] = [];
     if (years > 0) {
-      durationStr += `${years} year${years > 1 ? 's' : ''}`;
+      parts.push(es ? `${years} ${years === 1 ? 'año' : 'años'}` : `${years} yr${years === 1 ? '' : 's'}`);
     }
-    if (months > 0) {
-      if (durationStr) {
-        durationStr += ' and ';
-      }
-      durationStr += `${months}${months > 1 ? '' : ''}`;
+    if (rest > 0) {
+      parts.push(es ? `${rest} ${rest === 1 ? 'mes' : 'meses'}` : `${rest} mo${rest === 1 ? '' : 's'}`);
     }
-    return durationStr || '0';
+    return parts.join(' ');
   }
 }
-

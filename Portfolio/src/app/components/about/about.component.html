@@ -1,20 +1,37 @@
-<div id="sec1" class="section about-section">
+<section id="sec1" class="section band-dark about-section">
   <div class="about-container">
-    <img [src]="aboutImage" loading="lazy" alt="{{ 'ABOUT.TITLE' | translate }}" class="about-image" />
+    <img
+      [src]="aboutImage"
+      loading="lazy"
+      [alt]="'ABOUT.TITLE' | translate"
+      class="about-image"
+    />
+
     <div class="about-text">
-      <h1 class="title-about">{{ 'ABOUT.TITLE' | translate }}</h1>
+      <h2 class="section-title">{{ 'ABOUT.TITLE' | translate }}</h2>
 
-      <p>{{ 'ABOUT.ABOUT_TEXT' | translate }}</p>
-      <p>{{ 'ABOUT.ADDITIONAL' | translate }}</p>
+      <p>{{ 'ABOUT.PARAGRAPH_1' | translate }}</p>
+      <p>{{ 'ABOUT.PARAGRAPH_2' | translate }}</p>
+      <p>{{ 'ABOUT.PARAGRAPH_3' | translate }}</p>
 
-      <div class="skills-container">
-        <div class="skills soft-skills">
-          <h2>{{ 'ABOUT.SOFT_SKILLS_TITLE' | translate }}</h2>
-          <ul>
+      <div class="about-columns">
+        <div>
+          <h3>{{ 'ABOUT.SOFT_SKILLS_TITLE' | translate }}</h3>
+          <ul class="soft-skill-list">
             <li *ngFor="let skill of ('ABOUT.SOFT_SKILLS' | translate)">{{ skill }}</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>{{ 'ABOUT.FACTS_TITLE' | translate }}</h3>
+          <ul class="fact-list">
+            <li *ngFor="let fact of ('ABOUT.FACTS' | translate)">
+              <strong>{{ fact.LABEL }}</strong>
+              <span>{{ fact.VALUE }}</span>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>

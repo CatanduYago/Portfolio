@@ -1,19 +1,34 @@
-<div id="sec2" class="section">
-  <h1 class="title-work">{{ 'WORK.TITLE' | translate }}</h1>
-  <p>{{ 'WORK.DESCRIPTION' | translate }}</p>
+<section id="sec2" class="section band-light">
+  <h2 class="section-title">{{ 'WORK.TITLE' | translate }}</h2>
+  <p class="section-lead">{{ 'WORK.DESCRIPTION' | translate }}</p>
 
   <div class="portfolio-container">
-    <div class="portfolio-item" *ngFor="let project of projects">
+    <article class="portfolio-item surface" *ngFor="let project of projects">
       <div class="portfolio-details">
-        <a [href]="project.link" target="_blank" class="portfolio-title">
-          {{ 'PROJECTS.' + project.key + '.TITLE' | translate }}
-        </a>
-        <p>
-          {{ 'PROJECTS.' + project.key + '.DESCRIPTION' | translate }}
-        </p>
-        <br *ngIf="project.image" />
-        <img *ngIf="project.image" [src]="project.image" loading="lazy" class="foto-proyecto" alt="{{ 'PROJECTS.' + project.key + '.TITLE' | translate }} Screenshot" />
+        <div class="portfolio-head">
+          <a [href]="project.link" target="_blank" rel="noopener noreferrer" class="portfolio-title">
+            {{ 'PROJECTS.' + project.key + '.TITLE' | translate }}
+            <span class="arrow" aria-hidden="true">&#8599;</span>
+          </a>
+          <span class="portfolio-meta">
+            {{ 'PROJECTS.' + project.key + '.META' | translate }}
+          </span>
+        </div>
+
+        <p>{{ 'PROJECTS.' + project.key + '.DESCRIPTION' | translate }}</p>
+
+        <div class="chip-row" *ngIf="project.tech.length">
+          <span class="chip" *ngFor="let tech of project.tech">{{ tech }}</span>
+        </div>
+
+        <img
+          *ngIf="project.image"
+          [src]="project.image"
+          loading="lazy"
+          class="foto-proyecto"
+          [alt]="'PROJECTS.' + project.key + '.TITLE' | translate"
+        />
       </div>
-    </div>
+    </article>
   </div>
-</div>
+</section>

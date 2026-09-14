@@ -1,23 +1,26 @@
-<div id="sec0" class="section">
+<section id="sec0" class="section band-light">
+  <span class="eyebrow">{{ 'HERO.EYEBROW' | translate }}</span>
   <h1 class="title">{{ 'HERO.TITLE' | translate }}</h1>
+  <p class="hero-role">{{ 'HERO.ROLE' | translate }}</p>
 
   <div class="content-container">
     <div>
       <p>{{ 'HERO.DESCRIPTION' | translate }}</p>
-      <br />
-      <div class="availability-container">
-        <div class="availability-item">
-          <img src="assets/location-icon.png" alt="Ubicación" class="location-icon" />
-          <span>{{ 'HERO.LOCATION' | translate }}</span>
-        </div>
-        <div class="availability-item">
-          <img src="assets/green-dot.gif" alt="Disponible" class="availability-gif" />
-          <span>{{ 'HERO.STATUS' | translate }}</span>
-        </div>
-      </div>
-    </div>
-    <img [src]="profileImage" loading="lazy" alt="Foto de perfil" id="profile" />
-  </div>
 
-  <app-social-links></app-social-links>
-</div>
+      <div class="availability-container">
+        <span class="availability-item">
+          <img src="assets/location-icon.png" alt="" class="location-icon" />
+          {{ 'HERO.LOCATION' | translate }}
+        </span>
+        <span class="availability-item">
+          <img src="assets/green-dot.gif" alt="" class="availability-gif" />
+          {{ 'HERO.STATUS' | translate }}
+        </span>
+      </div>
+
+      <app-social-links></app-social-links>
+    </div>
+
+    <img [src]="profileImage" alt="Yago Catalano Andújar" id="profile" />
+  </div>
+</section>

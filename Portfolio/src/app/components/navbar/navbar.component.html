@@ -1,36 +1,41 @@
-<!-- Navbar para escritorio -->
-<nav class="navbar d-none d-xl-flex">
+<!-- Desktop -->
+<nav class="navbar d-none d-xl-flex" [class.scrolled]="scrolled">
   <div class="navbar-content container-fluid">
-    <img src="assets/Logo.png" alt="Logo" class="navbar-logo" />
-    <ul class="navbar-links">
-      <li>
-        <a href="#sec1">{{ "NAVBAR.ABOUT" | translate }}</a>
-      </li>
-      <li>
-        <a href="#sec2">{{ "NAVBAR.WORK" | translate }}</a>
-      </li>
-      <li>
-        <a href="#sec3">{{ "NAVBAR.TESTIMONIALS" | translate }}</a>
-      </li>
-      <li>
-        <a href="#sec4">{{ "NAVBAR.CONTACT" | translate }}</a>
-      </li>
-    </ul>
-    <div class="vl"></div>
-    <button class="language-switcher" (click)="toggleLanguage()">
-      <span class="language-desc">{{ "LANG.SHORT" | translate }}</span>
-      <img [src]="languageIcon" alt="Idioma" class="language-icon" />
-    </button>
-    <a (click)="downloadFile()" class="navbar-download-btn">
-      {{ "NAVBAR.DOWNLOAD_CV" | translate }}
+    <a href="#sec0" class="navbar-brand-link">
+      <img src="assets/Logo.png" alt="Yago Catalano Andújar" class="navbar-logo" />
     </a>
+
+    <ul class="navbar-links">
+      <li><a href="#sec1">{{ "NAVBAR.ABOUT" | translate }}</a></li>
+      <li><a href="#sec5">{{ "NAVBAR.EXPERIENCE" | translate }}</a></li>
+      <li><a href="#sec2">{{ "NAVBAR.WORK" | translate }}</a></li>
+      <li><a href="#sec7">{{ "NAVBAR.ACHIEVEMENTS" | translate }}</a></li>
+      <li><a href="#sec4">{{ "NAVBAR.CONTACT" | translate }}</a></li>
+    </ul>
+
+    <div class="navbar-actions">
+      <button
+        class="language-switcher"
+        type="button"
+        (click)="toggleLanguage()"
+        [attr.aria-label]="'LANG.SWITCH' | translate"
+      >
+        <span class="language-desc">{{ "LANG.SHORT" | translate }}</span>
+        <img [src]="language.flagIcon" alt="" class="language-icon" />
+      </button>
+
+      <button type="button" (click)="downloadFile()" class="navbar-download-btn">
+        {{ "NAVBAR.DOWNLOAD_CV" | translate }}
+      </button>
+    </div>
   </div>
 </nav>
 
-<nav class="navbar navbar-expand-lg d-xl-none">
+<!-- Mobile / tablet -->
+<nav class="navbar navbar-expand-xl d-xl-none" [class.scrolled]="scrolled">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="assets/Logo.png" alt="Logo" class="navbar-logo-mobile" />
+    <a class="navbar-brand" href="#sec0">
+      <img src="assets/Logo.png" alt="Yago Catalano Andújar" class="navbar-logo-mobile" />
     </a>
     <button
       class="navbar-toggler"
@@ -39,44 +44,31 @@
       data-bs-target="#navbarNav"
       aria-controls="navbarNav"
       aria-expanded="false"
-      aria-label="Toggle navigation"
+      [attr.aria-label]="'NAVBAR.MENU' | translate"
     >
       <span class="navbar-toggler-icon">
-        <img src="assets/menu.png" alt="Menu Icon" />
+        <img src="assets/menu.png" alt="" />
       </span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="#sec1" class="nav-link">{{ "NAVBAR.ABOUT" | translate }}</a></li>
+        <li class="nav-item"><a href="#sec5" class="nav-link">{{ "NAVBAR.EXPERIENCE" | translate }}</a></li>
+        <li class="nav-item"><a href="#sec2" class="nav-link">{{ "NAVBAR.WORK" | translate }}</a></li>
+        <li class="nav-item"><a href="#sec7" class="nav-link">{{ "NAVBAR.ACHIEVEMENTS" | translate }}</a></li>
+        <li class="nav-item"><a href="#sec3" class="nav-link">{{ "NAVBAR.TESTIMONIALS" | translate }}</a></li>
+        <li class="nav-item"><a href="#sec4" class="nav-link">{{ "NAVBAR.CONTACT" | translate }}</a></li>
         <li class="nav-item">
-          <a href="#sec1" class="nav-link">{{ "NAVBAR.ABOUT" | translate }}</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sec5" class="nav-link">{{
-            "NAVBAR.EXPERIENCE" | translate
-          }}</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sec2" class="nav-link">{{ "NAVBAR.WORK" | translate }}</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sec3" class="nav-link">{{
-            "NAVBAR.TESTIMONIALS" | translate
-          }}</a>
-        </li>
-        <li class="nav-item">
-          <a href="#sec4" class="nav-link">{{
-            "NAVBAR.CONTACT" | translate
-          }}</a>
-        </li>
-        <li class="nav-item">
-          <button class="language-switcher nav-link" (click)="toggleLanguage()">
-            <img [src]="languageIcon" alt="Idioma" class="language-icon" />
+          <button class="language-switcher nav-link" type="button" (click)="toggleLanguage()">
+            <span class="language-desc">{{ "LANG.SHORT" | translate }}</span>
+            <img [src]="language.flagIcon" alt="" class="language-icon" />
           </button>
         </li>
         <li class="nav-item">
-          <a (click)="downloadFile()" class="navbar-download-btn nav-link">
+          <button type="button" (click)="downloadFile()" class="navbar-download-btn nav-link">
             {{ "NAVBAR.DOWNLOAD_CV" | translate }}
-          </a>
+          </button>
         </li>
       </ul>
     </div>

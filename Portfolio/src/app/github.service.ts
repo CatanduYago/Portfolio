@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+/**
+ * Public, unauthenticated GitHub lookup.
+ *
+ * NOTE: the previous version of this file contained a hard-coded personal
+ * access token. Never ship a token in front-end code — anything bundled into
+ * the browser is public. Revoke that token in GitHub > Settings > Developer
+ * settings > Personal access tokens.
+ */
+@Injectable({ providedIn: 'root' })
 export class GithubService {
+  private readonly apiUrl = 'https://api.github.com/users/CatanduYago/repos';
 
-  private apiUrl = 'https://api.github.com/user/repos';
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getRepos(): Observable<any> {
-    const headers = new HttpHeaders({
-      'Authorization': `token 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`
-    });
-    return this.http.get<any>(this.apiUrl, { headers });
+    return this.http.get<any>(`${this.apiUrl}?sort=updated&per_page=12`);
   }
 }

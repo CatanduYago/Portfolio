@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, HostListener } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,40 +7,26 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  currentLanguage: string = 'es';
-  languageIcon: string = 'assets/espana.png';
+  scrolled = false;
 
-  constructor(private translate: TranslateService) {
-    // Configurar el idioma por defecto y usarlo en el servicio de traducción
-    this.translate.setDefaultLang(this.currentLanguage);
-    this.translate.use(this.currentLanguage);
+  constructor(public language: LanguageService) {}
+
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.scrolled = window.scrollY > 12;
   }
 
   toggleLanguage(): void {
-    // Cambiar entre 'es' y 'en' y actualizar el ícono de idioma
-    if (this.currentLanguage === 'es') {
-      this.currentLanguage = 'en';
-      this.languageIcon = 'assets/eeuu.png';
-    } else {
-      this.currentLanguage = 'es';
-      this.languageIcon = 'assets/espana.png';
-    }
-    // Activar el idioma seleccionado en el servicio
-    this.translate.use(this.currentLanguage);
+    this.language.toggle();
   }
 
   downloadFile(): void {
-    // Seleccionar el archivo correcto en función del idioma actual
-    const fileName = this.currentLanguage === 'es'
-      ? 'Yago_CV.pdf'
-      : 'Yago_CV_en.pdf';
-
+    const isSpanish = this.language.current === 'es';
     const link = document.createElement('a');
-    link.href = `assets/${fileName}`;
-    link.download = this.currentLanguage === 'es'
-      ? 'Yago_Catalano_Andújar_CV.pdf'
-      : 'Yago_Catalano_Andujar_CV.pdf';
+    link.href = `assets/${isSpanish ? 'Yago_CV.pdf' : 'Yago_CV_en.pdf'}`;
+    link.download = isSpanish
+      ? 'Yago_Catalano_Andujar_CV_ES.pdf'
+      : 'Yago_Catalano_Andujar_CV_EN.pdf';
     link.click();
   }
-
 }
